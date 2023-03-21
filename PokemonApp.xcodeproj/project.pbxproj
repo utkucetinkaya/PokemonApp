@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B8BFF09B29CA4F7F00F222F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFF09A29CA4F7F00F222F4 /* AppDelegate.swift */; };
-		B8BFF09D29CA4F7F00F222F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFF09C29CA4F7F00F222F4 /* SceneDelegate.swift */; };
 		B8BFF09F29CA4F7F00F222F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFF09E29CA4F7F00F222F4 /* ViewController.swift */; };
 		B8BFF0A229CA4F7F00F222F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8BFF0A029CA4F7F00F222F4 /* Main.storyboard */; };
 		B8BFF0A429CA4F8200F222F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BFF0A329CA4F8200F222F4 /* Assets.xcassets */; };
 		B8BFF0A729CA4F8200F222F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8BFF0A529CA4F8200F222F4 /* LaunchScreen.storyboard */; };
+		B8BFF0B229CA521000F222F4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BFF0B029CA521000F222F4 /* SplashViewController.swift */; };
+		B8BFF0B329CA521000F222F4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8BFF0B129CA521000F222F4 /* SplashViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B8BFF09729CA4F7F00F222F4 /* PokemonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BFF09A29CA4F7F00F222F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8BFF09C29CA4F7F00F222F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B8BFF09E29CA4F7F00F222F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8BFF0A129CA4F7F00F222F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8BFF0A329CA4F8200F222F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8BFF0A629CA4F8200F222F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8BFF0A829CA4F8200F222F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8BFF0B029CA521000F222F4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B8BFF0B129CA521000F222F4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,8 @@
 		B8BFF09929CA4F7F00F222F4 /* PokemonApp */ = {
 			isa = PBXGroup;
 			children = (
+				B8BFF0B429CA52FC00F222F4 /* Modules */,
 				B8BFF09A29CA4F7F00F222F4 /* AppDelegate.swift */,
-				B8BFF09C29CA4F7F00F222F4 /* SceneDelegate.swift */,
 				B8BFF09E29CA4F7F00F222F4 /* ViewController.swift */,
 				B8BFF0A029CA4F7F00F222F4 /* Main.storyboard */,
 				B8BFF0A329CA4F8200F222F4 /* Assets.xcassets */,
@@ -65,6 +67,31 @@
 				B8BFF0A829CA4F8200F222F4 /* Info.plist */,
 			);
 			path = PokemonApp;
+			sourceTree = "<group>";
+		};
+		B8BFF0AE29CA51FB00F222F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFF0B029CA521000F222F4 /* SplashViewController.swift */,
+				B8BFF0B129CA521000F222F4 /* SplashViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B8BFF0B429CA52FC00F222F4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFF0B529CA530000F222F4 /* Splash */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B8BFF0B529CA530000F222F4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B8BFF0AE29CA51FB00F222F4 /* Controller */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +155,7 @@
 				B8BFF0A729CA4F8200F222F4 /* LaunchScreen.storyboard in Resources */,
 				B8BFF0A429CA4F8200F222F4 /* Assets.xcassets in Resources */,
 				B8BFF0A229CA4F7F00F222F4 /* Main.storyboard in Resources */,
+				B8BFF0B329CA521000F222F4 /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BFF0B229CA521000F222F4 /* SplashViewController.swift in Sources */,
 				B8BFF09F29CA4F7F00F222F4 /* ViewController.swift in Sources */,
 				B8BFF09B29CA4F7F00F222F4 /* AppDelegate.swift in Sources */,
-				B8BFF09D29CA4F7F00F222F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
