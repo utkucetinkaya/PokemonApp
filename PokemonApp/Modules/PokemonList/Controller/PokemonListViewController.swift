@@ -14,7 +14,6 @@ class PokemonListViewController: UIViewController {
     @IBOutlet weak fileprivate var tableView: UITableView!
     
     //  MARK: - Variables
-
     let viewModel = PokemonListViewModel()
     var pokemonList: [Pokemon]?
 
@@ -39,6 +38,16 @@ class PokemonListViewController: UIViewController {
         viewModel.fetchAllPokemon()
         viewModel.delegate = self
     }
+    
+    // MARK: - Navigate Detail
+    
+    private func navigateDetail(id: Int, name: String) {
+        let vc = PokemonDetailViewController()
+        vc.pokeId = id
+        vc.pokemonName = name
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }
 
 // MARK: - TableView
@@ -57,6 +66,9 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
         return UITableViewCell()
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigateDetail(id: indexPath.row + 1, name: pokemonList?[indexPath.row].name ?? "")
+    }
 }
 
 // MARK: - ViewModel Protocol
