@@ -20,6 +20,7 @@ class PokemonDetailViewController: UIViewController {
 
     // MARK: - Outlets
 
+    @IBOutlet weak fileprivate var backView: UIView!
     @IBOutlet weak fileprivate var heightLabel: UILabel!
     @IBOutlet weak fileprivate var widthLabel: UILabel!
     @IBOutlet weak fileprivate var powerLabel: UILabel!
@@ -32,8 +33,11 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pokemonName
+        backView.layer.cornerRadius = 15
+
         registerTableView()
         registerViewModel()
+        
     }
 
     // MARK: - Register ViewModel
@@ -46,10 +50,10 @@ class PokemonDetailViewController: UIViewController {
         let url = URL(string: pokemon.sprites?.frontDefault ?? "")
         detailImageView.kf.setImage(with: url)
         
-        heightLabel.text = "Height: \(pokemon.height ?? 0)"
-        widthLabel.text = "Width: \(pokemon.weight ?? 0)"
-        powerLabel.text = "Power: \(pokemon.baseExperience ?? 0)"
-        nameLabel.text = "Name: \(pokemon.name ?? "")"
+        heightLabel.text = "Height: \(pokemon.height ?? 0) cm"
+        widthLabel.text = "Width: \(pokemon.weight ?? 0) kg"
+        powerLabel.text = "\(pokemon.baseExperience ?? 0)"
+        nameLabel.text = "\(pokemon.name ?? "")"
     }
 
     // MARK: - Register TableView

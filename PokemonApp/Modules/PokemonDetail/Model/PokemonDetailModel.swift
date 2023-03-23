@@ -16,8 +16,6 @@ struct PokemonDetailModel: Codable {
     let name: String?
     let species: Species?
     let sprites: Sprites?
-    let stats: [Stat]?
-    let types: [TypeElement]?
     let weight: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -27,8 +25,6 @@ struct PokemonDetailModel: Codable {
         case name
         case species
         case sprites
-        case stats
-        case types
         case weight
     }
 
@@ -40,8 +36,6 @@ struct PokemonDetailModel: Codable {
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(species, forKey: .species)
         try container.encodeIfPresent(sprites, forKey: .sprites)
-        try container.encodeIfPresent(stats, forKey: .stats)
-        try container.encodeIfPresent(types, forKey: .types)
         try container.encodeIfPresent(weight, forKey: .weight)
     }
 
@@ -53,8 +47,6 @@ struct PokemonDetailModel: Codable {
         name = try values.decodeIfPresent(String.self, forKey: .name)
         species = try values.decodeIfPresent(Species.self, forKey: .species)
         sprites = try values.decodeIfPresent(Sprites.self, forKey: .sprites)
-        stats = try values.decodeIfPresent([Stat].self, forKey: .stats)
-        types = try values.decodeIfPresent([TypeElement].self, forKey: .types)
         weight = try values.decodeIfPresent(Int.self, forKey: .weight)
     }
 }
@@ -78,7 +70,6 @@ struct Species: Codable {
     let url: String?
 }
 
-
 // MARK: - Sprites
 class Sprites: Codable {
  
@@ -94,21 +85,3 @@ class Sprites: Codable {
         self.frontDefault = frontDefault
     }
 }
-
-// MARK: - Stat
-struct Stat: Codable {
-    let baseStat, effort: Int?
-    let stat: Species?
-
-    enum CodingKeys: String, CodingKey {
-        case baseStat = "base_stat"
-        case effort, stat
-    }
-}
-
-// MARK: - TypeElement
-struct TypeElement: Codable {
-    let slot: Int?
-    let type: Species?
-}
-

@@ -37,7 +37,12 @@ enum Router: URLRequestConvertible {
     }
 
     var parameters: Parameters? {
-        return nil
+        switch self {
+        case .getPokemonList:
+            return ["limit": 40]
+        case .getPokemonDetail:
+            return nil
+        }
     }
 
     func asURLRequest() throws -> URLRequest {
